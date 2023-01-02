@@ -17,8 +17,12 @@
     }
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.1",
+    "@react-navigation/stack": "^6.3.10",
+    "axios": "^1.2.2",
     "react": "18.1.0",
-    "react-native": "0.70.6"
+    "react-native": "0.70.6",
+    "swr": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -52,7 +56,10 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   },
   "husky": {
     "hooks": {
