@@ -1,3 +1,5 @@
+import axios from "axios";
+import { getPokemonList } from "../fetcher";
 
 const { Cancel, AxiosError } = require('axios');
 const { resolvePromise } = require('../promise-handler');
@@ -58,3 +60,20 @@ describe('Ensuring resolvePromise returning [data, null] resolved or [data, erro
 /**
  * Testing {@function getPokemonList}
 */
+describe('Ensuring getPokemonList', () => {
+  test('Test if returning list of Pokemon', async () => {
+    const data = {
+      count: 807,
+      results: [
+        { name: 'bulbasaur', url: 'https://pokeapi.co/api/v2/pokemon/1/' },
+        { name: 'butterfree', url: 'https://pokeapi.co/api/v2/pokemon/12/' },
+      ]
+    };
+
+    const mockAxiosGet = jest.spyOn(axios, 'get').mockImplementation(() => Promise.resolve({ data }));
+    const result = await getPokemonList();
+
+    expect(result).toEqual(data);
+    mockAxiosGet.mockRestore();
+  })
+});
