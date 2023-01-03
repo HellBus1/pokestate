@@ -6,6 +6,7 @@ const { resolvePromise } = require('../promise-handler');
 
 /**
  * Testing {@function resolvePromise}
+ * from {@file promise-handler.ts}
 */
 describe('Ensuring resolvePromise returning [data, null] resolved or [data, error] when rejected', () => {
   test('Check whether is resolved', async () => {
@@ -59,9 +60,10 @@ describe('Ensuring resolvePromise returning [data, null] resolved or [data, erro
 
 /**
  * Testing {@function getPokemonList}
+ * from {@file fetcher.ts}
 */
 describe('Ensuring getPokemonList', () => {
-  test('Test if returning list of Pokemon', async () => {
+  test('Check if resolved returning list of Pokemon', async () => {
     const data = {
       count: 807,
       results: [
@@ -75,5 +77,13 @@ describe('Ensuring getPokemonList', () => {
 
     expect(result).toEqual(data);
     mockAxiosGet.mockRestore();
-  })
+  });
+
+  test('Check if rejected throwing Error', async () => {
+    const error = { code: 404, detail: 'Not Found' };
+    const mockAxiosGet = jest.spyOn(axios, 'get').mockImplementation(() => Promise.reject(error));
+
+    expect(getPokemonList()).rejects.toThrowError(error.detail);
+    mockAxiosGet.mockRestore();
+  });
 });
