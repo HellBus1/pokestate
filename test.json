@@ -1,0 +1,89 @@
+{
+  "text": "<p>Halo, selamat datang di HADE<\/p>",
+  "source": "SYSTEM",
+  "timestamp": "January 03, 2023 12:54:23",
+  "name": "Chatbot",
+  "server_chat_id": "bc1-36272-0",
+  "status": "NOT_SENT",
+  "is_deleted": false,
+  "info": {
+    "is_confident": true,
+    "response_type": "ChatbotResponseType.non_task",
+    "knowledge_group": null,
+    "topic": null,
+    "confidence_score": 1
+  }
+},
+{
+  "text": "<p>Selamat datang di modul pembelajaran tentang Segmentasi<\/p>",
+  "source": "SYSTEM",
+  "timestamp": "January 03, 2023 12:54:29",
+  "name": "Chatbot",
+  "server_chat_id": "bc1-36273-0",
+  "status": "READ",
+  "is_deleted": false,
+  "info": {
+    "is_confident": true,
+    "response_type": "ChatbotResponseType.scenario_based",
+    "knowledge_group": {
+      "id": "2",
+      "name": "Hade",
+      "description": "Knowledge group for Hade",
+      "aliases": [],
+      "keywords": []
+    },
+    "topic": {
+      "id": "8",
+      "knowledge_group_id": "2",
+      "name": "Learning Module",
+      "description": ""
+    },
+    "confidence_score": 1
+  }
+},
+{
+  "text": "Terima kasih HADE",
+  "source": "USER",
+  "timestamp": "January 03, 2023 12:55:29",
+  "name": "Syubban2",
+  "server_chat_id": "bc0-36274",
+  "status": "READ",
+  "reply_to": null,
+  "is_deleted": false,
+  "info": {
+    "normalized_query": "",
+    "intention": "",
+    "pos_tag": [],
+    "entities": [],
+    "keywords": [],
+    "eats": [],
+    "synonyms": []
+  }
+},
+{
+  "text": "<p>Ketika mendengar kata Segmentasi, apa yang terpikir oleh Syubban2?<\/p>",
+  "source": "SYSTEM",
+  "timestamp": "January 03, 2023 12:55:29",
+  "name": "Chatbot",
+  "server_chat_id": "bc1-36274-0",
+  "status": "READ",
+  "is_deleted": false,
+  "info": {
+    "is_confident": true,
+    "response_type": "ChatbotResponseType.scenario_based",
+    "knowledge_group": {
+      "id": "2",
+      "name": "Hade",
+      "description": "Knowledge group for Hade",
+      "aliases": [],
+      "keywords": []
+    },
+    "topic": {
+      "id": "8",
+      "knowledge_group_id": "2",
+      "name": "Learning Module",
+      "description": ""
+    },
+    "confidence_score": 1
+  }
+}
