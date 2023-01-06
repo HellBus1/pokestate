@@ -5,7 +5,7 @@ import PageContainer from '../../components/PageContainer/PageContainer';
 import usePokemonList from './hooks/usePokemonList';
 
 const PokemonScreen: FC = () => {
-  const { data: { pokemon }, action: { setUrl } } = usePokemonList();
+  const { data: { pokemon } } = usePokemonList();
 
   return <PageContainer hasSafeArea={true}>
     <FlatList
