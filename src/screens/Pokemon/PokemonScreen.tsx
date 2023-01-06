@@ -13,7 +13,6 @@ const PokemonScreen: FC = () => {
       renderItem={({ item }) => {
         return <List.Accordion
           title={item.name}>
-
         </List.Accordion>
       }}
     />
