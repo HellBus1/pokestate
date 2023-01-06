@@ -4,7 +4,9 @@ import { PaginatedResult, Pokemon } from '../../../models/pokemon';
 import { getPokemonList } from '../../../utils/fetcher';
 
 const usePokemonList = () => {
-  const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon/?limit=10&offset=10');
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const url = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${page - 1}`;
 
   const { data: pokemon, error } = useSWR<PaginatedResult<Pokemon>, Error>(
     url,
@@ -13,7 +15,6 @@ const usePokemonList = () => {
 
   return {
     data: { pokemon },
-    action: { setUrl },
     error
   }
 };
